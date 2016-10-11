@@ -1,11 +1,15 @@
-var http = require('http');
-var fs = require('fs');
-
-fs.readFile('./NodeJsPractice/HomeWork3/file.jpg', function (err, data) {
-    if (err) throw err; // Fail if the file can't be read.
-    http.createServer(function (req, res) {
-        res.writeHead(200, {'Content-Type': 'image/jpeg'});
-        res.end(data); // Send the file data to the browser.
-    }).listen(3333);
-    console.log('Server is running at http://localhost:3333/');
-});
+var buffer=new Buffer(100);
+for(var i=0;i<100;++i){
+    buffer[i]=i;
+}
+console.log(buffer.toString())
+console.log("=============================")
+var newBuffer=buffer.slice(40,60);
+console.log(newBuffer.toString())
+console.log("=============================")
+var copyBuffer=new Buffer(20);
+buffer.copy(copyBuffer,0,40,60);
+console.log(copyBuffer.toString())
+console.log("=============================")
+console.log("original buffer")
+console.log(buffer.toString())
