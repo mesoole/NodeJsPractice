@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h4 style='color:green'><%= message %></h4>
+
+    <form action="/save" method="post">
+        <table style="border:1px solid black; color:blue;">
+           <tr> <td><h2>Name</h2></td> <td><input type="text" name="name"/></td></tr>
+           <tr> 
+                <td><h2>Category</h2></td> 
+                <td>
+                 <select name="category">
+                    <option label="School">school</option>
+                    <option label="Resturant">resturant</option>
+                    <option label="Hospital">resturant</option>
+                    <option label="Bank">resturant</option>
+                    <option label="Picnic">picnic</option>
+                </select>  
+                </td> 
+           </tr>
+           <tr> <td><h2>Latitude</h2></td> <td><input type="text" name="lat"/></td> </tr>
+           <tr> <td><h2>Longitude</h2></td> <td><input type="text" name="long"/></td> </tr>
+
+           <tr><td><input type="submit" value="Add"/></td><td><a href='/search'>Search</a></td></tr>
+       </form>    
+
+
+  </body>
+</html>
